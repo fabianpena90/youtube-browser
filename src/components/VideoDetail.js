@@ -1,19 +1,19 @@
 import React from 'react';
 
 function VideoDetail(props) {
-  console.log(props)
-  if(!props.videos){
+  if(!props.video){
     return <div>Loading video...</div>
   }
 
-  const videoSrc = `https://www.youtube.com/embed/${props.videos.id.videoId}`
+  const videoSrc = `https://www.youtube.com/embed/${props.video?.id.videoId}`
   return (
     <div>
     <div className="ui embed">
-      <iframe src={videoSrc} />
+      <iframe title="video" src={videoSrc} />
     </div>
       <div className="ui segment">
-        <h4 className="ui header">{props.videos.snippet.title}</h4>
+      <h4 className="ui header">{props.video?.snippet.title}</h4>
+      <p>{props.video?.snippet.description}</p>
       </div>
     </div>
   );

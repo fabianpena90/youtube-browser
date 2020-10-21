@@ -11,30 +11,37 @@ function App(props) {
   const [seletedVideo, setSeletedVideo] = useState(null)
   const KEY = 'AIzaSyAnCVqrX_hU5C8whtJKp34U5zjthBGm2Pc'
   
+
   async function onTermSubmit(term){
     const res = await youtube.get("/search", {
       params: {
         q: term,
         part: "snippet",
-        maxResults: 10,
+        maxResults: 5,
         type: 'video',
         key: KEY
       }
     });
     setVideo(res.data.items)
-    console.log(res.data.items)
   }
 
-  function videoSelect(videos){
-    console.log(videos, 'from hererere')
-    // setSeletedVideo(videos)
+  function videoSelect(videos) {
+    setSeletedVideo(videos)
   }
 
   return (
     <div style={{marginTop: '10px'}} className="ui container">
       <SearchBar onFormSubmit={onTermSubmit}/>
-      <VideoDetail video={seletedVideo} />
-      <VideoList videoSelect={videoSelect} videos={videos}/>
+      <div className="ui grid">
+        <div className="ui row">
+          <div className="eleven wide column">
+            <VideoDetail video={seletedVideo} />
+          </div>
+          <div className="five wide column">
+            <VideoList videoSelect={videoSelect} videos={videos}/>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
