@@ -1,3 +1,16 @@
+# Youtube Searching
+
+This App you can search for any video that are in youtube.
+
+Technologies used:
+- React
+- JavaScript
+- Semantic UI
+- Axios
+- Youtube API
+- HTML
+- CSS
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
