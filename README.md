@@ -2,7 +2,7 @@
 
 This App you can search for any video that are in youtube.
 
-Here is the link https://youtube-browser.vercel.app/
+Here is the link https://my-youtube-browser.netlify.app/
 
 Technologies used:
 - React
