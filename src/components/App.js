@@ -21,7 +21,7 @@ function App(props) {
         type: 'video',
         key: KEY
       }
-    });
+    },[]);
     setVideo(res.data.items)
   }
 
@@ -31,6 +31,7 @@ function App(props) {
 
   return (
     <div style={{marginTop: '10px'}} className="ui container">
+      <img style={{marginBottom:'10px'}} className="ui medium centered image" src='/youtubelogo.png' alt="log" />
       <SearchBar onFormSubmit={onTermSubmit}/>
       <div className="ui grid">
         <div className="ui row">

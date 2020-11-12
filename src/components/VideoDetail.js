@@ -2,7 +2,11 @@ import React from 'react';
 
 function VideoDetail(props) {
   if(!props.video){
-    return <div>Loading video...</div>
+    return (
+      <div>
+       Type to searach for a video
+      </div>
+    )
   }
 
   const videoSrc = `https://www.youtube.com/embed/${props.video?.id.videoId}`
